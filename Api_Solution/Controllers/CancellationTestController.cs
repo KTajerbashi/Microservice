@@ -51,9 +51,9 @@ public class CancellationTestController : BaseController
     }
 
     [HttpGet("simulate-client-cancellation")]
-    public async Task<IActionResult> SimulateClientCancellation(string endpoint = "create", int cancelAfterSeconds = 2)
+    public async Task<IActionResult> SimulateClientCancellation(string endpoint, int cancelAfterSeconds = 2)
     {
-        var client = _httpClientFactory.CreateClient();
+        var client = _httpClientFactory.CreateClient("ApiClient");
         var cts = new CancellationTokenSource(TimeSpan.FromSeconds(cancelAfterSeconds));
 
         try

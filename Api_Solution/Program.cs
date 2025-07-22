@@ -1,5 +1,6 @@
 using Api_Solution.Controllers;
 using Microsoft.OpenApi.Models;
+using System.Net.Http.Headers;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +13,14 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<UserController>();
 
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7271/");
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(
+        new MediaTypeWithQualityHeaderValue("application/json"));
+});
+
 
 builder.Services.AddSwaggerGen(options =>
 {
