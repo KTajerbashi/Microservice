@@ -1,23 +1,60 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 @using Architectures.BaseSources.Models
-@inject HttpClient Http
+@inject IHttpClientFactory _httpClientFactory
 
 <PageTitle>Home</PageTitle>
 
-<div>
-    <div>
-        <p>Id : @product.Id </p>
-        <p>Message : @product.Message</p>
+<h3>Fetch Product</h3>
+
+<div class="row g-2">
+    <div class="col-auto">
+        <input class="form-control" type="number" @bind="id" placeholder="Enter product ID" />
+
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary" @onclick="GetProduct">Get Product</button>
+        <button class="btn btn-primary" @onclick="() => Console.WriteLine(DateTime.Now.ToString())">Test Click</button>
     </div>
 </div>
 
 
+@if (isLoading)
+{
+    <p>Loading...</p>
+}
+else if (product is not null)
+{
+    <div class="mt-3">
+        <p><strong>ID:</strong> @product.Id</p>
+        <p><strong>Name:</strong> @product.Name</p>
+        <p><strong>Message:</strong> @product.Message</p>
+    </div>
+}
 
 @code {
-    ProductDto product;
+    private ProductDto? product;
+    private int id;
+    bool isLoading = false;
 
-    protected override async Task OnInitializedAsync()
+    private async Task GetProduct()
     {
-        product = await Http.GetFromJsonAsync<ProductDto>("shop/product/12");
+        Console.WriteLine($"Fetching product with ID: {id} at {DateTime.Now}");
+        isLoading = true;
+        var client = _httpClientFactory.CreateClient("ApiGateway");
+
+        try
+        {
+            product = await client.GetFromJsonAsync<ProductDto>($"shop/product/{id}");
+        }
+        catch (Exception ex)
+        {
+            product = new ProductDto { Id = id, Name = "Not Found", Message = ex.Message };
+            Console.WriteLine($"Error fetching product: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
     }
 }
