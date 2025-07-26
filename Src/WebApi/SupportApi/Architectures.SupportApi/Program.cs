@@ -1,3 +1,4 @@
+using Architectures.SupportApi;
 using Architectures.SupportApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,5 +30,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.AddMinimalApis();
 
 app.Run();
