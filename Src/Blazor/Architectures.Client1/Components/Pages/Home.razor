@@ -1,7 +1,23 @@
 ﻿@page "/"
+@using Architectures.BaseSources.Models
+@inject HttpClient Http
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div>
+    <div>
+        <p>Id : @product.Id </p>
+        <p>Message : @product.Message</p>
+    </div>
+</div>
 
-Welcome to your new app.
+
+
+@code {
+    ProductDto product;
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = await Http.GetFromJsonAsync<ProductDto>("shop/product/12");
+    }
+}

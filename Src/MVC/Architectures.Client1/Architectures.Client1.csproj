@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\BaseSource\Architectures.BaseSources\Architectures.BaseSources.csproj" />
+  </ItemGroup>
+
 </Project>

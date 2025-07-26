@@ -7,9 +7,6 @@ public static class YarpApp
 {
     public static WebApplication StartYarp(this WebApplicationBuilder builder)
     {
-        // Add YARP services
-        //builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
-
         builder.Services
            .AddReverseProxy()
            .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))

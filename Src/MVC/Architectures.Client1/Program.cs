@@ -3,6 +3,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpClient("ApiGateway", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["Gateway:Url"]); // API Gateway URL
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

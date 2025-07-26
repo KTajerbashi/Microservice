@@ -2,10 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace Architectures.ShopApi.Controllers;
-
-[ApiController]
-[Route("dashboard")]
-public class DashboardController : ControllerBase
+public class DashboardController : BaseContorller
 {
     private readonly ClientDataService _clientDataService;
 

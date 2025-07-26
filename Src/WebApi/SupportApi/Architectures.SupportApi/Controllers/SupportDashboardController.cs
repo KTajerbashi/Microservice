@@ -4,8 +4,26 @@ using Microsoft.AspNetCore.Mvc;
 namespace Architectures.SupportApi.Controllers;
 
 [ApiController]
-[Route("support-dashboard")]
-public class SupportDashboardController : ControllerBase
+[Route("support/[controller]")]
+public class BaseContorller : ControllerBase
+{
+
+}
+
+[ApiController]
+[Route("contact")]
+public class ContactController : ControllerBase
+{
+    [HttpGet("{id}")]
+    public IActionResult Get(int id)
+    {
+        return Ok(new { Id = id, Message = $"Contact {id}" });
+    }
+}
+
+
+
+public class SupportDashboardController : BaseContorller
 {
     private readonly ClientDataService _clientDataService;
 
