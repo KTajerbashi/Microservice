@@ -1,0 +1,6 @@
+@SupportService.EndPoint.WebApi_HostAddress = http://localhost:5185
+
+GET {{SupportService.EndPoint.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
