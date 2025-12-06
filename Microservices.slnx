@@ -7,20 +7,8 @@
     <Project Path="Clients/AuthClient/AuthApp/AuthApp.Client/AuthApp.Client.csproj" />
     <Project Path="Clients/AuthClient/AuthApp/AuthApp/AuthApp.csproj" />
   </Folder>
-  <Folder Name="/Clients/ProductClient/">
-    <Project Path="Clients/ProductClient/ProductApp/productapp.client/productapp.client.esproj">
-      <Build />
-      <Deploy />
-    </Project>
-    <Project Path="Clients/ProductClient/ProductApp/ProductApp.Server/ProductApp.Server.csproj" Id="850192c3-7a61-4811-89ee-9399af0d8112" />
-  </Folder>
-  <Folder Name="/Clients/SupportClient/">
-    <Project Path="Clients/SupportClient/SupportApp/supportapp.client/supportapp.client.esproj">
-      <Build />
-      <Deploy />
-    </Project>
-    <Project Path="Clients/SupportClient/SupportApp/SupportApp.Server/SupportApp.Server.csproj" Id="50aa8909-fa13-4b19-9fd3-a979cca84634" />
-  </Folder>
+  <Folder Name="/Clients/ProductClient/" />
+  <Folder Name="/Clients/SupportClient/" />
   <Folder Name="/ServiceProviders/" />
   <Folder Name="/ServiceProviders/AuthService/" />
   <Folder Name="/ServiceProviders/AuthService/1.Core/">
