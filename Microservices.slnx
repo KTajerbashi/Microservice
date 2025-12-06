@@ -1,0 +1,50 @@
+<Solution>
+  <Folder Name="/ApiGateway/">
+    <Project Path="ApiGateway/WebApiGateway/WebApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/Clients/" />
+  <Folder Name="/Clients/AuthClient/">
+    <Project Path="Clients/AuthClient/AuthApp/AuthApp.Client/AuthApp.Client.csproj" />
+    <Project Path="Clients/AuthClient/AuthApp/AuthApp/AuthApp.csproj" />
+  </Folder>
+  <Folder Name="/Clients/ProductClient/">
+    <Project Path="Clients/ProductClient/ProductApp/ProductApp.csproj" />
+  </Folder>
+  <Folder Name="/Clients/SupportClient/">
+    <Project Path="Clients/SupportClient/SupportApp/SupportApp.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/" />
+  <Folder Name="/ServiceProviders/AuthService/" />
+  <Folder Name="/ServiceProviders/AuthService/1.Core/">
+    <Project Path="ServiceProviders/AuthService/1.Core/AuthService.Core.Application/AuthService.Core.Application.csproj" />
+    <Project Path="ServiceProviders/AuthService/1.Core/AuthService.Core.Domain/AuthService.Core.Domain.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/AuthService/2.Infra/">
+    <Project Path="ServiceProviders/AuthService/2.Infra/AuthService.Infra.Data/AuthService.Infra.Data.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/AuthService/3.EndPoint/">
+    <Project Path="ServiceProviders/AuthService/3.EndPoint/AuthService.EndPoint.WebApi/AuthService.EndPoint.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/ProductService/" />
+  <Folder Name="/ServiceProviders/ProductService/1.Core/">
+    <Project Path="ServiceProviders/ProductService/1.Core/ProductService.Core.Application/ProductService.Core.Application.csproj" />
+    <Project Path="ServiceProviders/ProductService/1.Core/ProductService.Core.Domain/ProductService.Core.Domain.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/ProductService/2.Infra/">
+    <Project Path="ServiceProviders/ProductService/2.Infra/ProductService.Infra.Data/ProductService.Infra.Data.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/ProductService/3.EndPoint/">
+    <Project Path="ServiceProviders/ProductService/3.EndPoint/ProductService.EndPoint.WebApi/ProductService.EndPoint.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/SupportService/" />
+  <Folder Name="/ServiceProviders/SupportService/1.Core/">
+    <Project Path="ServiceProviders/SupportService/1.Core/SupportService.Core.Application/SupportService.Core.Application.csproj" />
+    <Project Path="ServiceProviders/SupportService/1.Core/SupportService.Core.Domain/SupportService.Core.Domain.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/SupportService/2.Infra/">
+    <Project Path="ServiceProviders/SupportService/2.Infra/SupportService.Infra.Data/SupportService.Infra.Data.csproj" />
+  </Folder>
+  <Folder Name="/ServiceProviders/SupportService/3.EndPoint/">
+    <Project Path="ServiceProviders/SupportService/3.EndPoint/SupportService.EndPoint.WebApi/SupportService.EndPoint.WebApi.csproj" />
+  </Folder>
+</Solution>
